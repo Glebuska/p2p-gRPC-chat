@@ -4,14 +4,14 @@ package grpc;
 
 message MyEmptyMessage {}
 
-// I called it Note because message Message sounds complicated
+// I called it MyMessage because message Message sounds complicated
 message MyMessage {
     string name = 1;
     string message = 2;
 }
 
 service Server {
-    // This bi-directional stream makes it possible to send and receive Notes between 2 persons
+    // This bi-directional stream makes it possible to send and receive MyMessages between 2 persons
     rpc ChatStream (MyEmptyMessage) returns (stream MyMessage);
     rpc SendNote (MyMessage) returns (MyEmptyMessage);
 }

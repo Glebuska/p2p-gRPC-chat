@@ -2,11 +2,11 @@ import argparse
 from concurrent import futures
 import grpc
 
-import chat_pb2_grpc as rpc
+import resources.chat_pb2_grpc as rpc
 from tkinter import *
 from tkinter import simpledialog
-from src.client import Client
-from src.server import ChatServer
+from client import Client
+from server import ChatServer
 
 
 def start_client():

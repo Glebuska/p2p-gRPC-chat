@@ -5,8 +5,8 @@ from tkinter import *
 
 import grpc
 
-import chat_pb2 as chat
-import chat_pb2_grpc as rpc
+import resources.chat_pb2 as chat
+import resources.chat_pb2_grpc as rpc
 
 
 class Client:
