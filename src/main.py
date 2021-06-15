@@ -30,12 +30,21 @@ def start_client():
 
 
 def start_server(address, port):
+    root = Tk()
+    frame = Frame(root, width=300, height=300)
+    frame.pack()
+    root.withdraw()
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=3))
     rpc.add_ServerServicer_to_server(ChatServer(), server)
-    print(f'Starting server on IP {address}:{port}')
     server.add_insecure_port('[::]:' + str(port))
     server.start()
-    server.wait_for_termination()
+    print(f'Starting server on IP {address}:{port}')
+
+    username = None
+    while username is None:
+        username = simpledialog.askstring("Username", "What's your username?", parent=root)
+    root.deiconify()
+    Client(username, frame, address, port)
 
 
 def main():
