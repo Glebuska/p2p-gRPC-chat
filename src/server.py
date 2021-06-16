@@ -10,7 +10,7 @@ class ChatServer(rpc.ServerServicer):
     def ChatStream(self, request_iterator, context):
         lastindex = 0
         while True:
-            while len(self.chats) > lastindex:
+            if len(self.chats) > lastindex:
                 n = self.chats[lastindex]
                 lastindex += 1
                 yield n
