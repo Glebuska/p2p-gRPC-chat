@@ -18,7 +18,7 @@ python3 src/main.py --type=client
 
 В режиме сервера:
 ```
-python3 src/main.py --type=client [--address=*IPv4 address* --port=*port number*]
+python3 src/main.py --type=server [--address=*IPv4 address* --port=*port number*]
 ```
 
 ### Архитектура
