@@ -10,7 +10,7 @@ from server import ChatServer
 
 
 def start_client():
-    """Identify server location, then connect and start the client UI."""
+    """Identify a server location, then connect and start the client UI."""
     root = Tk()
     frame = Frame(root, width=300, height=300)
     frame.pack()
@@ -31,7 +31,7 @@ def start_client():
 
 
 def start_server(address, port):
-    """Initialize socket listener, than start the server UI."""
+    """Initialize a socket listener, then start the server UI."""
     root = Tk()
     frame = Frame(root, width=300, height=300)
     frame.pack()
