@@ -10,6 +10,7 @@ from server import ChatServer
 
 
 def start_client():
+    """Identify server location, then connect and start the client UI."""
     root = Tk()
     frame = Frame(root, width=300, height=300)
     frame.pack()
@@ -30,6 +31,7 @@ def start_client():
 
 
 def start_server(address, port):
+    """Initialize socket listener, than start the server UI."""
     root = Tk()
     frame = Frame(root, width=300, height=300)
     frame.pack()
@@ -48,6 +50,7 @@ def start_server(address, port):
 
 
 def main():
+    """Parse command line arguments, then run an appropriate mode."""
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument("-t", "--type", default="client", help="client or server")
     argument_parser.add_argument("--address", default="localhost")
